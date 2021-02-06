@@ -45,13 +45,14 @@ class Detail extends React.Component<{match: {params: any}}, { buildpack: any }>
             // if (!this.state.buildpack.latest.description) {
             //     return null;
             // }
+                if ({this.state.buildpack.latest.description})
 
             return <div>
                 <Card.Title>
                     Description
                 </Card.Title>
                 <Card.Text>
-                    {this.state.buildpack.latest.description}
+                   
                 </Card.Text>
             </div>;
         }
@@ -60,13 +61,13 @@ class Detail extends React.Component<{match: {params: any}}, { buildpack: any }>
             // if (!this.state.buildpack.latest.license) {
             //     return null;
             // }
-
+            const result = !this.state.buildpack.latest.license ? 'Unknown' : this.state.buildpack.latest.license
             return <div>
                 <Card.Title>
                     License
                 </Card.Title>
                 <Card.Text>
-                    {this.state.buildpack.latest.license}
+                    {result}
                 </Card.Text>
             </div>;
         }
